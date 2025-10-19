@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desenho Interativo da HipÈrbole</title>
+    <title>Desenho Interativo da Hip√©rbole</title>
     <!-- Carregar Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -31,18 +31,18 @@
 <body class="bg-gray-50 flex items-center justify-center min-h-screen p-4 font-sans">
 
     <div class="w-full max-w-4xl bg-white p-6 md:p-8 rounded-xl shadow-2xl border border-gray-100">
-        <h1 class="text-3xl font-extrabold text-gray-800 mb-2 text-center">HipÈrbole Interativa</h1>
-        <p class="text-center text-gray-500 mb-6">Ajuste os valores de 'a' e 'b' para explorar a forma da hipÈrbole e suas propriedades.</p>
+        <h1 class="text-3xl font-extrabold text-gray-800 mb-2 text-center">Hip√©rbole Interativa</h1>
+        <p class="text-center text-gray-500 mb-6">Ajuste os valores de 'a' e 'b' para explorar a forma da hip√©rbole e suas propriedades.</p>
 
-        <!-- Controles de Par‚metros -->
+        <!-- Controles de Par√¢metros -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <div class="flex flex-col">
-                <label for="paramA" class="text-lg font-medium text-indigo-600 mb-1">Par‚metro 'a' (Eixo Transverso)</label>
+                <label for="paramA" class="text-lg font-medium text-indigo-600 mb-1">Par√¢metro 'a' (Eixo Transverso)</label>
                 <input type="range" id="paramA" min="1" max="10" step="0.5" value="3" class="w-full h-2 bg-indigo-100 rounded-lg appearance-none cursor-pointer">
                 <span id="valueA" class="text-center text-xl font-bold mt-2 text-gray-700">a = 3.0</span>
             </div>
             <div class="flex flex-col">
-                <label for="paramB" class="text-lg font-medium text-purple-600 mb-1">Par‚metro 'b' (Eixo Conjugado)</label>
+                <label for="paramB" class="text-lg font-medium text-purple-600 mb-1">Par√¢metro 'b' (Eixo Conjugado)</label>
                 <input type="range" id="paramB" min="1" max="10" step="0.5" value="4" class="w-full h-2 bg-purple-100 rounded-lg appearance-none cursor-pointer">
                 <span id="valueB" class="text-center text-xl font-bold mt-2 text-gray-700">b = 4.0</span>
             </div>
@@ -55,15 +55,15 @@
 
         <!-- Legenda e Focos -->
         <div class="mt-6 text-center text-sm text-gray-600">
-            <p>HipÈrbole: <span class="text-red-500 font-bold">Vermelho</span> | AssÌntotas: <span class="text-blue-500 font-bold">Azul</span> | Focos: <span class="text-green-600 font-bold">Verde</span> | VÈrtices: <span class="text-orange-500 font-bold">Laranja</span></p>
-            <p class="mt-2 text-base font-semibold">Dist‚ncia Focal c: <span id="valueC"></span></p>
+            <p>Hip√©rbole: <span class="text-red-500 font-bold">Vermelho</span> | Ass√≠ntotas: <span class="text-blue-500 font-bold">Azul</span> | Focos: <span class="text-green-600 font-bold">Verde</span> | V√©rtices: <span class="text-orange-500 font-bold">Laranja</span></p>
+            <p class="mt-2 text-base font-semibold">Dist√¢ncia Focal c: <span id="valueC"></span></p>
         </div>
 
     </div>
 
     <script>
         (function() {
-            // ConfiguraÁ„o Inicial do Canvas e Contexto
+            // Configura√ß√£o Inicial do Canvas e Contexto
             const canvas = document.getElementById('hyperbolaCanvas');
             const ctx = canvas.getContext('2d');
             const W = canvas.width;
@@ -87,7 +87,7 @@
                 return centerY - y * scale; // Inverter Y para o sistema de coordenadas do canvas
             }
 
-            // FunÁ„o para desenhar uma linha entre dois pontos
+            // Fun√ß√£o para desenhar uma linha entre dois pontos
             function drawLine(x1, y1, x2, y2, color, lineWidth = 1) {
                 ctx.strokeStyle = color;
                 ctx.lineWidth = lineWidth;
@@ -97,7 +97,7 @@
                 ctx.stroke();
             }
 
-            // FunÁ„o principal para desenhar tudo
+            // Fun√ß√£o principal para desenhar tudo
             function drawHyperbola(a, b) {
                 // Limpar o canvas
                 ctx.clearRect(0, 0, W, H);
@@ -106,19 +106,19 @@
                 drawLine(0, centerY, W, centerY, '#e5e7eb', 1); // Eixo X
                 drawLine(centerX, 0, centerX, H, '#e5e7eb', 1); // Eixo Y
 
-                // 2. Calcular Dist‚ncia Focal (c)
+                // 2. Calcular Dist√¢ncia Focal (c)
                 // c^2 = a^2 + b^2
                 const c = Math.sqrt(a * a + b * b);
                 valueC.textContent = c.toFixed(2);
 
-                // 3. Desenhar AssÌntotas (y = +/- (b/a)x)
+                // 3. Desenhar Ass√≠ntotas (y = +/- (b/a)x)
                 ctx.strokeStyle = '#3b82f6'; // Azul
                 ctx.lineWidth = 1.5;
                 ctx.setLineDash([5, 5]); // Linha tracejada
 
                 const slope = b / a;
 
-                // AssÌntota positiva (y = slope * x)
+                // Ass√≠ntota positiva (y = slope * x)
                 drawLine(
                     0, 
                     toCanvasY(slope * (-centerX / scale)), 
@@ -127,7 +127,7 @@
                     '#3b82f6'
                 );
 
-                // AssÌntota negativa (y = -slope * x)
+                // Ass√≠ntota negativa (y = -slope * x)
                 drawLine(
                     0, 
                     toCanvasY(-slope * (-centerX / scale)), 
@@ -136,9 +136,9 @@
                     '#3b82f6'
                 );
 
-                ctx.setLineDash([]); // Resetar para linha sÛlida
+                ctx.setLineDash([]); // Resetar para linha s√≥lida
 
-                // 4. Desenhar os Ramos da HipÈrbole
+                // 4. Desenhar os Ramos da Hip√©rbole
                 ctx.strokeStyle = '#ef4444'; // Vermelho
                 ctx.lineWidth = 3;
 
@@ -148,7 +148,7 @@
                 ctx.beginPath();
                 let firstPoint = true;
                 for (let x_unit = a; x_unit <= max_x_units; x_unit += 0.05) {
-                    // EquaÁ„o: y^2/b^2 = x^2/a^2 - 1 => y = +/- b * sqrt(x^2/a^2 - 1)
+                    // Equa√ß√£o: y^2/b^2 = x^2/a^2 - 1 => y = +/- b * sqrt(x^2/a^2 - 1)
                     const y_unit = b * Math.sqrt((x_unit * x_unit) / (a * a) - 1);
 
                     if (firstPoint) {
@@ -205,13 +205,13 @@
                 }
                 ctx.stroke();
 
-                // 5. Desenhar VÈrtices (+/- a, 0)
+                // 5. Desenhar V√©rtices (+/- a, 0)
                 ctx.fillStyle = '#f97316'; // Laranja
-                // VÈrtice 1 (a, 0)
+                // V√©rtice 1 (a, 0)
                 ctx.beginPath();
                 ctx.arc(toCanvasX(a), centerY, 5, 0, 2 * Math.PI);
                 ctx.fill();
-                // VÈrtice 2 (-a, 0)
+                // V√©rtice 2 (-a, 0)
                 ctx.beginPath();
                 ctx.arc(toCanvasX(-a), centerY, 5, 0, 2 * Math.PI);
                 ctx.fill();
@@ -227,7 +227,7 @@
                 ctx.arc(toCanvasX(-c), centerY, 5, 0, 2 * Math.PI);
                 ctx.fill();
                 
-                // Adicionar rÛtulos
+                // Adicionar r√≥tulos
                 ctx.fillStyle = '#10b981';
                 ctx.font = '12px Inter';
                 ctx.fillText('F1', toCanvasX(c) + 8, centerY - 5);
@@ -238,7 +238,7 @@
                 ctx.fillText('V2', toCanvasX(-a) - 18, centerY + 18);
             }
 
-            // FunÁıes de atualizaÁ„o e evento
+            // Fun√ß√µes de atualiza√ß√£o e evento
             function updateAndDraw() {
                 const a = parseFloat(paramA.value);
                 const b = parseFloat(paramB.value);
