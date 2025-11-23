@@ -1,6 +1,6 @@
-# 🎮 Jogo de Adivinhação de Filmes e Séries
+# 🎮 Jogo de Adivinhação de Filmes e Séries (Networds)
 
-Um jogo interativo no estilo "Jogo da Forca" onde os jogadores tentam adivinhar nomes de filmes e séries baseando-se em dicas. Desenvolvido em C com foco em gerenciamento de memória dinâmica e persistência de dados.
+Um jogo interativo no estilo "Jogo da Forca" onde os jogadores tentam adivinhar nomes de filmes e séries da Netflix baseando-se em dicas. Desenvolvido em C com foco em gerenciamento de memória dinâmica e persistência de dados.
 
 ## 📋 Descrição do Projeto
 
@@ -135,5 +135,5 @@ No menu de configurações, você pode:
 
 ---
 
-**Desenvolvido por:** Thayane Nascimento Rezende  
+**Desenvolvido por:** Thayane Nascimento Rezende, Isabelle Beatriz Lopes e Matheus Miquelão Prado  
 **Instituição:** UTFPR - Universidade Tecnológica Federal do Paraná
